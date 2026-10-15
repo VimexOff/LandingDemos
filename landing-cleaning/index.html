@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Пеночка — клининговая служба</title>
+  <meta name="description" content="Уборка квартир, уборка после ремонта и химчистка мебели. Онлайн-калькулятор стоимости. Демонстрационный лендинг.">
+  <meta name="theme-color" content="#0b7a6e">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%230b7a6e'/%3E%3Cpath d='M16 7c4 5 7 9 7 12.5a7 7 0 0 1-14 0C9 16 12 12 16 7z' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9.5h13V10"/><path d="M10 19.5v-5h4v5"/></symbol>
+    <symbol id="i-roller" viewBox="0 0 24 24"><rect x="3" y="3" width="15" height="6" rx="1.5"/><path d="M18 6h2.5v5.5H11V15"/><rect x="9.5" y="15" width="3" height="6" rx="1"/></symbol>
+    <symbol id="i-sofa" viewBox="0 0 24 24"><path d="M4 11V8a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v3"/><path d="M2 13a2 2 0 0 1 4 0v2h12v-2a2 2 0 0 1 4 0v5H2z"/><path d="M5 18v2M19 18v2"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3h3.5l1.5 5-2.2 1.4a11 11 0 0 0 6.8 6.8L16 14l5 1.5V19a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 7 8.5-7"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a class="logo" href="#top" aria-label="Пеночка — на главную">
+        <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+          <circle cx="16" cy="16" r="16" fill="currentColor"/>
+          <path d="M16 7c4 5 7 9 7 12.5a7 7 0 0 1-14 0C9 16 12 12 16 7z" fill="#fff"/>
+          <circle cx="24.5" cy="8.5" r="3" fill="#ffcf5c"/>
+        </svg>
+        <span class="logo__text">Пеночка</span>
+      </a>
+
+      <button class="burger" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Открыть меню">
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+      </button>
+
+      <nav class="nav" id="site-nav" aria-label="Основное меню">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#services">Услуги</a></li>
+          <li><a class="nav__link" href="#calculator">Калькулятор</a></li>
+          <li><a class="nav__link" href="#process">Как мы работаем</a></li>
+          <li><a class="nav__link" href="#reviews">Отзывы</a></li>
+          <li><a class="nav__link" href="#faq">Вопросы</a></li>
+        </ul>
+        <a class="button button--primary button--small nav__cta" href="#order">Оставить заявку</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <h1 class="hero__title" id="hero-title">Чистый дом <span class="hero__accent">без&nbsp;выходных</span> на&nbsp;уборку</h1>
+          <p class="hero__text">Уборка квартир, мойка после ремонта и химчистка диванов. Приезжаем со своими средствами и пылесосом, цену называем до начала работ, и на месте она не меняется.</p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#calculator">Рассчитать стоимость</a>
+            <a class="button button--ghost" href="#services">Посмотреть услуги</a>
+          </div>
+          <p class="hero__meta">Однушка до 40 м² от 3&nbsp;500&nbsp;₽. Приезжаем каждый день с 8:00 до 22:00.</p>
+        </div>
+
+        <div class="hero__visual">
+          <svg class="hero__art" viewBox="0 0 480 440" role="img" aria-labelledby="hero-art-title">
+            <title id="hero-art-title">Иллюстрация: чистое окно, распылитель и мыльные пузыри</title>
+            <defs>
+              <linearGradient id="hero-sky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#bfeee6"/>
+                <stop offset="1" stop-color="#f1fbf9"/>
+              </linearGradient>
+              <linearGradient id="hero-bottle" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#14a593"/>
+                <stop offset="1" stop-color="#0b7a6e"/>
+              </linearGradient>
+              <radialGradient id="hero-bubble" cx="0.35" cy="0.3" r="0.75">
+                <stop offset="0" stop-color="#ffffff"/>
+                <stop offset="0.6" stop-color="#e6f8f5" stop-opacity="0.7"/>
+                <stop offset="1" stop-color="#9fe0d6" stop-opacity="0.6"/>
+              </radialGradient>
+            </defs>
+            <circle cx="240" cy="226" r="204" fill="#e3f4f1"/>
+            <rect x="70" y="62" width="230" height="266" rx="16" fill="#fff" stroke="#12312d" stroke-width="5"/>
+            <rect x="88" y="80" width="194" height="230" rx="8" fill="url(#hero-sky)"/>
+            <circle cx="240" cy="132" r="22" fill="#ffcf5c"/>
+            <path d="M88 252c30-22 60-26 96-14s66 8 98-12v84H88z" fill="#bfe6dd"/>
+            <path d="M185 80v230M88 196h194" stroke="#12312d" stroke-width="5"/>
+            <path d="M108 168l42-42M116 186l58-58M206 290l52-52" stroke="#fff" stroke-width="8" stroke-linecap="round" opacity="0.9"/>
+            <rect x="52" y="324" width="266" height="20" rx="6" fill="#12312d"/>
+            <path d="M118 300c-6-18-2-34 8-44 2 16 0 30-8 44zM122 300c6-16 16-26 30-28-6 14-16 24-30 28zM116 300c-10-10-24-14-36-10 10 8 22 12 36 10z" fill="#14a593"/>
+            <rect x="102" y="296" width="36" height="28" rx="5" fill="#ffcf5c"/>
+
+            <rect x="296" y="162" width="30" height="14" rx="4" fill="#12312d"/>
+            <rect x="320" y="154" width="62" height="32" rx="9" fill="#12312d"/>
+            <path d="M340 186l-12 34h12l10-34z" fill="#12312d"/>
+            <rect x="340" y="184" width="28" height="22" fill="#12312d"/>
+            <rect x="316" y="202" width="76" height="142" rx="22" fill="url(#hero-bottle)"/>
+            <rect x="331" y="238" width="46" height="66" rx="9" fill="#fff"/>
+            <path d="M354 252c7 9 11 15 11 20.5a11 11 0 0 1-22 0c0-5.5 4-11.5 11-20.5z" fill="#0b7a6e"/>
+            <circle cx="282" cy="168" r="4" fill="#9fe0d6"/>
+            <circle cx="268" cy="158" r="3" fill="#9fe0d6"/>
+            <circle cx="266" cy="180" r="3.5" fill="#9fe0d6"/>
+            <circle cx="252" cy="168" r="2.5" fill="#9fe0d6"/>
+
+            <g stroke="#9fe0d6" stroke-width="2">
+              <circle cx="414" cy="112" r="28" fill="url(#hero-bubble)"/>
+              <circle cx="446" cy="190" r="14" fill="url(#hero-bubble)"/>
+              <circle cx="420" cy="380" r="20" fill="url(#hero-bubble)"/>
+              <circle cx="44" cy="150" r="18" fill="url(#hero-bubble)"/>
+              <circle cx="58" cy="398" r="11" fill="url(#hero-bubble)"/>
+            </g>
+            <path d="M336 70l5 14 14 5-14 5-5 14-5-14-14-5 14-5z" fill="#ffcf5c"/>
+            <path d="M40 252l4 10 10 4-10 4-4 10-4-10-10-4 10-4z" fill="#14a593"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2 class="section__title" id="services-title">Что мы убираем</h2>
+          <p class="section__lead">Если вашей задачи нет в списке, позвоните. Моем и дачи, и небольшие офисы до 150 м².</p>
+        </div>
+
+        <ul class="grid grid--3 services">
+          <li class="service-card reveal">
+            <h3 class="service-card__title"><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg>Уборка квартир</h3>
+            <p class="service-card__text">Поддерживающая раз в неделю или генеральная перед праздником, переездом, приездом гостей.</p>
+            <ul class="check-list">
+              <li class="check-list__item">Пыль везде, куда достаёт рука, включая верх шкафов</li>
+              <li class="check-list__item">Кухонный фартук, плита, раковина</li>
+              <li class="check-list__item">Ванна, унитаз, плитка, зеркала</li>
+            </ul>
+            <p class="service-card__price">от 3 500 ₽</p>
+          </li>
+          <li class="service-card service-card--featured reveal" style="--delay: 1">
+            <span class="service-card__badge">Чаще всего заказывают</span>
+            <h3 class="service-card__title"><svg class="icon" aria-hidden="true"><use href="#i-roller"/></svg>После ремонта</h3>
+            <p class="service-card__text">Снимаем строительную пыль со стен и потолка, отмываем затирку с плитки, скотч и пену с окон.</p>
+            <ul class="check-list">
+              <li class="check-list__item">Пылесос с водяным фильтром</li>
+              <li class="check-list__item">Скребки, которые не царапают стекло</li>
+              <li class="check-list__item">Приезжают двое, на 60 м² уходит день</li>
+            </ul>
+            <p class="service-card__price">от 9 900 ₽</p>
+          </li>
+          <li class="service-card reveal" style="--delay: 2">
+            <h3 class="service-card__title"><svg class="icon" aria-hidden="true"><use href="#i-sofa"/></svg>Химчистка мебели</h3>
+            <p class="service-card__text">Диваны, кресла, матрасы. Пятна от кофе и вина обычно уходят полностью, старые жирные следы становятся заметно бледнее.</p>
+            <ul class="check-list">
+              <li class="check-list__item">Моющий пылесос-экстрактор</li>
+              <li class="check-list__item">Средство подбираем по ярлыку ткани</li>
+              <li class="check-list__item">Сохнет 4–6 часов при открытом окне</li>
+            </ul>
+            <p class="service-card__price">от 2 900 ₽ за диван</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--tinted" id="calculator" aria-labelledby="calc-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2 class="section__title" id="calc-title">Рассчитайте стоимость за минуту</h2>
+          <p class="section__lead">Сумма меняется сразу, как только вы что-то выбираете. Менеджер сверит её по телефону: расходится она, только если площадь указана неточно.</p>
+        </div>
+
+        <form class="calc reveal" id="calc-form" novalidate>
+          <div class="calc__fields">
+            <fieldset class="calc__group">
+              <legend class="calc__legend">Площадь помещения</legend>
+              <div class="calc__area">
+                <input class="range" type="range" id="calc-area-range" min="20" max="250" step="1" value="50" aria-label="Площадь, ползунок" aria-controls="calc-area">
+                <div class="calc__area-field">
+                  <input class="calc__area-input" type="number" id="calc-area" name="area" min="20" max="250" step="1" value="50" inputmode="numeric" aria-label="Площадь в квадратных метрах">
+                  <span class="calc__area-unit" aria-hidden="true">м²</span>
+                </div>
+              </div>
+              <p class="calc__hint">От 20 до 250 м²</p>
+            </fieldset>
+
+            <fieldset class="calc__group">
+              <legend class="calc__legend">Тип уборки</legend>
+              <div class="calc__options">
+                <label class="option">
+                  <input class="option__input" type="radio" name="type" value="regular" data-rate="90" data-label="Поддерживающая уборка" checked>
+                  <span class="option__body">
+                    <span class="option__title">Поддерживающая</span>
+                    <span class="option__meta">90 ₽/м²</span>
+                  </span>
+                </label>
+                <label class="option">
+                  <input class="option__input" type="radio" name="type" value="general" data-rate="160" data-label="Генеральная уборка">
+                  <span class="option__body">
+                    <span class="option__title">Генеральная</span>
+                    <span class="option__meta">160 ₽/м²</span>
+                  </span>
+                </label>
+                <label class="option">
+                  <input class="option__input" type="radio" name="type" value="renovation" data-rate="250" data-label="Уборка после ремонта">
+                  <span class="option__body">
+                    <span class="option__title">После ремонта</span>
+                    <span class="option__meta">250 ₽/м²</span>
+                  </span>
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset class="calc__group">
+              <legend class="calc__legend">Дополнительные услуги</legend>
+              <div class="calc__options calc__options--extras">
+                <label class="option option--check">
+                  <input class="option__input" type="checkbox" name="extra" value="windows" data-price="1800" data-label="Окна, до 4 створок">
+                  <span class="option__body">
+                    <span class="option__title">Окна, до 4 створок</span>
+                    <span class="option__meta">+1 800 ₽</span>
+                  </span>
+                </label>
+                <label class="option option--check">
+                  <input class="option__input" type="checkbox" name="extra" value="fridge" data-price="900" data-label="Холодильник внутри">
+                  <span class="option__body">
+                    <span class="option__title">Холодильник внутри</span>
+                    <span class="option__meta">+900 ₽</span>
+                  </span>
+                </label>
+                <label class="option option--check">
+                  <input class="option__input" type="checkbox" name="extra" value="oven" data-price="900" data-label="Духовой шкаф">
+                  <span class="option__body">
+                    <span class="option__title">Духовой шкаф</span>
+                    <span class="option__meta">+900 ₽</span>
+                  </span>
+                </label>
+                <label class="option option--check">
+                  <input class="option__input" type="checkbox" name="extra" value="sofa" data-price="2900" data-label="Химчистка дивана">
+                  <span class="option__body">
+                    <span class="option__title">Химчистка дивана</span>
+                    <span class="option__meta">+2 900 ₽</span>
+                  </span>
+                </label>
+                <label class="option option--check">
+                  <input class="option__input" type="checkbox" name="extra" value="balcony" data-price="1500" data-label="Балкон или лоджия">
+                  <span class="option__body">
+                    <span class="option__title">Балкон или лоджия</span>
+                    <span class="option__meta">+1 500 ₽</span>
+                  </span>
+                </label>
+                <label class="option option--check">
+                  <input class="option__input" type="checkbox" name="urgent" id="calc-urgent" data-label="Срочный выезд">
+                  <span class="option__body">
+                    <span class="option__title">Приехать сегодня</span>
+                    <span class="option__meta">+20% к сумме</span>
+                  </span>
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="calc__sticky-total" aria-hidden="true">
+              <span>Итого</span>
+              <span class="calc__sticky-value" id="calc-sticky-total">4 500 ₽</span>
+            </div>
+          </div>
+
+          <div class="calc__summary">
+            <p class="calc__summary-label" id="calc-total-label">Предварительная стоимость</p>
+            <output class="calc__total" id="calc-total" for="calc-area calc-urgent" aria-live="polite" aria-labelledby="calc-total-label">4 500 ₽</output>
+            <ul class="calc__breakdown" id="calc-breakdown"></ul>
+            <p class="calc__note">Меньше 3 500 ₽ заказ не бывает. Средства и инвентарь уже в цене.</p>
+            <a class="button button--primary button--wide" href="#order" id="calc-cta">Заказать уборку</a>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" id="process" aria-labelledby="process-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2 class="section__title" id="process-title">Четыре шага до чистой квартиры</h2>
+        </div>
+
+        <ol class="grid grid--4 steps">
+          <li class="step reveal">
+            <span class="step__number" aria-hidden="true">01</span>
+            <h3 class="step__title">Заявка</h3>
+            <p class="step__text">Оставляете заявку на сайте или звоните. С 8 до 22 перезваниваем в течение 15 минут.</p>
+          </li>
+          <li class="step reveal" style="--delay: 1">
+            <span class="step__number" aria-hidden="true">02</span>
+            <h3 class="step__title">Фиксируем цену</h3>
+            <p class="step__text">Спрашиваем про площадь, санузлы и балкон, называем цену и выбираем время.</p>
+          </li>
+          <li class="step reveal" style="--delay: 2">
+            <span class="step__number" aria-hidden="true">03</span>
+            <h3 class="step__title">Уборка</h3>
+            <p class="step__text">Приезжают один или два клинера с пылесосом, стремянкой и средствами, работают по чек-листу.</p>
+          </li>
+          <li class="step reveal" style="--delay: 3">
+            <span class="step__number" aria-hidden="true">04</span>
+            <h3 class="step__title">Приёмка</h3>
+            <p class="step__text">Проходите по квартире с клинером. Что не понравилось, переделывают сразу, потом оплата.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section--dark" id="benefits" aria-labelledby="benefits-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2 class="section__title" id="benefits-title">Почему нам доверяют ключи</h2>
+        </div>
+
+        <dl class="promises">
+          <div class="promise reveal">
+            <dt class="promise__title">Цена не меняется на месте</dt>
+            <dd class="promise__text">Если уборка затянулась на час, это наша проблема. Доплату просим, только если площадь оказалась больше заявленной.</dd>
+          </div>
+          <div class="promise reveal">
+            <dt class="promise__title">Средства без хлора и резкого запаха</dt>
+            <dd class="promise__text">Если дома аллергик или маленький ребёнок, заранее пришлём названия всех средств.</dd>
+          </div>
+          <div class="promise reveal">
+            <dt class="promise__title">Клинеры в штате</dt>
+            <dd class="promise__text">Не берём людей по объявлению на один день. Новый сотрудник первые десять уборок работает в паре с опытным.</dd>
+          </div>
+          <div class="promise reveal">
+            <dt class="promise__title">Ущерб возмещаем по договору</dt>
+            <dd class="promise__text">Разбили вазу или испортили покрытие средством, компенсируем стоимость. Это прописано в договоре, который подписываем до уборки.</dd>
+          </div>
+          <div class="promise reveal">
+            <dt class="promise__title">Оплата после проверки</dt>
+            <dd class="promise__text">Картой, переводом или наличными, когда вы прошли по квартире и всё приняли.</dd>
+          </div>
+          <div class="promise reveal">
+            <dt class="promise__title">Каждый день с 8 до 22</dt>
+            <dd class="promise__text">Включая праздники. 31 декабря работаем до 18:00.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" id="reviews" aria-labelledby="reviews-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2 class="section__title" id="reviews-title">Что говорят клиенты</h2>
+          <p class="section__note">Отзывы ниже придуманы для демонстрации, имена вымышлены.</p>
+        </div>
+
+        <ul class="grid grid--3 reviews">
+          <li class="review reveal">
+            <figure class="review__figure">
+              <p class="review__rating" aria-label="Оценка 5 из 5">★★★★★</p>
+              <blockquote class="review__text">
+                <p>Заказывала генеральную уборку перед приездом родителей. Приехали двое, за три часа отмыли даже то, до чего у меня руки не доходили годами.</p>
+              </blockquote>
+              <figcaption class="review__author">
+                <span class="review__avatar" aria-hidden="true">М</span>
+                <span><strong class="review__name">Марина К.</strong><span class="review__meta">Генеральная уборка, 64 м²</span></span>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="review reveal" style="--delay: 1">
+            <figure class="review__figure">
+              <p class="review__rating" aria-label="Оценка 5 из 5">★★★★★</p>
+              <blockquote class="review__text">
+                <p>После ремонта казалось, что пыль не уйдёт никогда. Ребята справились за день, отмыли окна от скотча и затирку с плитки.</p>
+              </blockquote>
+              <figcaption class="review__author">
+                <span class="review__avatar" aria-hidden="true">О</span>
+                <span><strong class="review__name">Олег С.</strong><span class="review__meta">Уборка после ремонта, 82 м²</span></span>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="review reveal" style="--delay: 2">
+            <figure class="review__figure">
+              <p class="review__rating" aria-label="Оценка 4 из 5">★★★★<span class="review__star-empty">★</span></p>
+              <blockquote class="review__text">
+                <p>Диван выглядит как новый, пятно от кофе исчезло. Сох чуть дольше, чем обещали, но результатом довольна.</p>
+              </blockquote>
+              <figcaption class="review__author">
+                <span class="review__avatar" aria-hidden="true">С</span>
+                <span><strong class="review__name">Светлана Д.</strong><span class="review__meta">Химчистка дивана</span></span>
+              </figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--tinted" id="faq" aria-labelledby="faq-title">
+      <div class="container container--narrow">
+        <div class="section__head reveal">
+          <h2 class="section__title" id="faq-title">Частые вопросы</h2>
+        </div>
+
+        <div class="faq reveal">
+          <div class="faq__item">
+            <h3 class="faq__heading">
+              <button class="faq__trigger" type="button" id="faq-q1" aria-expanded="false" aria-controls="faq-a1">
+                Нужно ли что-то подготовить к приезду клинеров?
+                <svg class="icon faq__icon" aria-hidden="true"><use href="#i-chevron"/></svg>
+              </button>
+            </h3>
+            <div class="faq__panel" id="faq-a1" role="region" aria-labelledby="faq-q1" hidden>
+              <p>Нет, всё привозим с собой: средства, пылесос, тряпки и стремянку. Уберите документы и ценные вещи и предупредите, если есть мрамор, натуральное дерево или другие капризные поверхности.</p>
+            </div>
+          </div>
+          <div class="faq__item">
+            <h3 class="faq__heading">
+              <button class="faq__trigger" type="button" id="faq-q2" aria-expanded="false" aria-controls="faq-a2">
+                Какими средствами вы убираете?
+                <svg class="icon faq__icon" aria-hidden="true"><use href="#i-chevron"/></svg>
+              </button>
+            </h3>
+            <div class="faq__panel" id="faq-a2" role="region" aria-labelledby="faq-q2" hidden>
+              <p>Профессиональной гипоаллергенной химией без резкого запаха. Если у вас есть свои любимые средства, можем использовать их.</p>
+            </div>
+          </div>
+          <div class="faq__item">
+            <h3 class="faq__heading">
+              <button class="faq__trigger" type="button" id="faq-q3" aria-expanded="false" aria-controls="faq-a3">
+                Сколько длится уборка?
+                <svg class="icon faq__icon" aria-hidden="true"><use href="#i-chevron"/></svg>
+              </button>
+            </h3>
+            <div class="faq__panel" id="faq-a3" role="region" aria-labelledby="faq-q3" hidden>
+              <p>Поддерживающая уборка однушки занимает около двух часов, генеральная 4–5 часов. После ремонта двое клинеров обычно работают целый день.</p>
+            </div>
+          </div>
+          <div class="faq__item">
+            <h3 class="faq__heading">
+              <button class="faq__trigger" type="button" id="faq-q4" aria-expanded="false" aria-controls="faq-a4">
+                Обязательно ли присутствовать во время уборки?
+                <svg class="icon faq__icon" aria-hidden="true"><use href="#i-chevron"/></svg>
+              </button>
+            </h3>
+            <div class="faq__panel" id="faq-a4" role="region" aria-labelledby="faq-q4" hidden>
+              <p>Нет. Ключи можно оставить у консьержа или передать с курьером. Когда закончим, пришлём фото каждой комнаты и вернём ключи тем же способом.</p>
+            </div>
+          </div>
+          <div class="faq__item">
+            <h3 class="faq__heading">
+              <button class="faq__trigger" type="button" id="faq-q5" aria-expanded="false" aria-controls="faq-a5">
+                Что, если результат не понравится?
+                <svg class="icon faq__icon" aria-hidden="true"><use href="#i-chevron"/></svg>
+              </button>
+            </h3>
+            <div class="faq__panel" id="faq-a5" role="region" aria-labelledby="faq-q5" hidden>
+              <p>Напишите или позвоните в течение суток, приедем и переделаем бесплатно. Если вы принимали работу лично, недочёты исправим ещё до оплаты.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="order" aria-labelledby="order-title">
+      <div class="container">
+        <div class="order reveal">
+          <div class="order__info">
+            <h2 class="section__title" id="order-title">Перезвоним в течение 15 минут</h2>
+            <p class="order__text">Спросим про площадь и пожелания, назовём цену и договоримся о времени. Если цена не подойдёт, просто откажетесь.</p>
+            <ul class="order__contacts">
+              <li class="order__contact"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><a href="tel:+70000000000">+7 (000) 000-00-00</a></li>
+              <li class="order__contact"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>Ежедневно с 8:00 до 22:00</li>
+            </ul>
+          </div>
+
+          <div class="order__panel">
+            <form class="form" id="order-form" novalidate>
+              <div class="field">
+                <label class="field__label" for="order-name">Имя <span aria-hidden="true">*</span></label>
+                <input class="field__input" type="text" id="order-name" name="name" autocomplete="name" required aria-describedby="order-name-error">
+                <p class="field__error" id="order-name-error"></p>
+              </div>
+              <div class="field">
+                <label class="field__label" for="order-phone">Телефон <span aria-hidden="true">*</span></label>
+                <input class="field__input" type="tel" id="order-phone" name="phone" autocomplete="tel" placeholder="+7 (___) ___-__-__" required aria-describedby="order-phone-error">
+                <p class="field__error" id="order-phone-error"></p>
+              </div>
+              <div class="field">
+                <label class="field__label" for="order-comment">Комментарий</label>
+                <textarea class="field__input field__input--textarea" id="order-comment" name="comment" rows="3" placeholder="Адрес, удобное время, особенности квартиры"></textarea>
+              </div>
+              <button class="button button--primary button--wide" type="submit">Отправить заявку</button>
+              <p class="form__policy">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+            </form>
+
+            <div class="form-success" id="order-success" tabindex="-1" hidden>
+              <span class="form-success__icon"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>
+              <h3 class="form-success__title">Заявка отправлена</h3>
+              <p class="form-success__text">Спасибо! Менеджер свяжется с вами в ближайшее время.</p>
+              <p class="form-success__demo">Демо-версия: данные никуда не передаются.</p>
+              <button class="button button--ghost" type="button" id="order-again">Отправить ещё одну</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a class="logo logo--light" href="#top" aria-label="Пеночка — наверх">
+          <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+            <circle cx="16" cy="16" r="16" fill="currentColor"/>
+            <path d="M16 7c4 5 7 9 7 12.5a7 7 0 0 1-14 0C9 16 12 12 16 7z" fill="#12312d"/>
+            <circle cx="24.5" cy="8.5" r="3" fill="#ffcf5c"/>
+          </svg>
+          <span class="logo__text">Пеночка</span>
+        </a>
+        <p class="footer__text">Клининговая служба для квартир и домов.</p>
+      </div>
+
+      <nav class="footer__nav" aria-label="Навигация в подвале">
+        <ul class="footer__list">
+          <li><a class="footer__link" href="#services">Услуги</a></li>
+          <li><a class="footer__link" href="#calculator">Калькулятор</a></li>
+          <li><a class="footer__link" href="#faq">Вопросы</a></li>
+          <li><a class="footer__link" href="#order">Заявка</a></li>
+        </ul>
+      </nav>
+
+      <ul class="footer__list footer__contacts">
+        <li class="footer__contact"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><a class="footer__link" href="tel:+70000000000">+7 (000) 000-00-00</a></li>
+        <li class="footer__contact"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><a class="footer__link" href="mailto:hello@penochka.example">hello@penochka.example</a></li>
+        <li class="footer__contact"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Работаем по всему городу</li>
+      </ul>
+    </div>
+    <div class="container footer__bottom">
+      <p>© 2026 «Пеночка». Демонстрационный проект: компания, цены и отзывы вымышлены.</p>
+      <a class="footer__link" href="../index.html">← Все работы</a>
+    </div>
+  </footer>
+</body>
+</html>
