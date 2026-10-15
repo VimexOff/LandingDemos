@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Демо-лендинги — примеры работ</title>
+  <meta name="description" content="Два демонстрационных лендинга на HTML, CSS и JavaScript: клининговая служба и барбершоп.">
+  <style>
+    :root {
+      --color-bg: #f4f3f0;
+      --color-surface: #ffffff;
+      --color-ink: #1d1d1b;
+      --color-muted: #66645f;
+      --color-line: #dedbd4;
+      --gutter: 16px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--color-ink);
+      background: var(--color-bg);
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--color-ink);
+      outline-offset: 4px;
+    }
+
+    .page {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 48px var(--gutter);
+    }
+
+    .page__header {
+      max-width: 620px;
+      margin-bottom: 40px;
+    }
+
+    .page__title {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 1.5rem + 2vw, 3rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    .page__lead {
+      margin: 0;
+      color: var(--color-muted);
+      font-size: 1.125rem;
+    }
+
+    .works {
+      display: grid;
+      gap: 24px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .work {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      overflow: hidden;
+      border: 1px solid var(--color-line);
+      border-radius: 16px;
+      background: var(--color-surface);
+      color: inherit;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .work:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .work__preview {
+      display: grid;
+      place-items: center;
+      aspect-ratio: 16 / 9;
+      font-size: clamp(1.5rem, 1rem + 2vw, 2.25rem);
+    }
+
+    .work__preview--cleaning {
+      background:
+        radial-gradient(circle at 85% 20%, rgba(255, 207, 92, 0.7), transparent 35%),
+        radial-gradient(circle at 10% 90%, rgba(20, 165, 147, 0.35), transparent 45%),
+        #e3f4f1;
+      color: #0b7a6e;
+      font-family: ui-rounded, system-ui, sans-serif;
+      font-weight: 800;
+    }
+
+    .work__preview--barber {
+      background: #1e4a3a;
+      color: #fff;
+      font-family: "Avenir Next Condensed", "Bahnschrift Condensed", "Arial Narrow", sans-serif;
+      font-stretch: condensed;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .work__body {
+      flex: 1;
+      padding: 20px 24px 24px;
+    }
+
+    .work__title {
+      margin: 0 0 6px;
+      font-size: 1.25rem;
+    }
+
+    .work__text {
+      margin: 0 0 12px;
+      color: var(--color-muted);
+    }
+
+    .work__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .work__tag {
+      padding: 2px 10px;
+      border-radius: 999px;
+      background: var(--color-bg);
+      font-size: 0.8125rem;
+    }
+
+    .page__footer {
+      margin-top: 48px;
+      color: var(--color-muted);
+      font-size: 0.875rem;
+    }
+
+    @media (min-width: 768px) {
+      :root {
+        --gutter: 32px;
+      }
+
+      .page {
+        padding-top: 80px;
+      }
+
+      .works {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .work {
+        transition: none;
+      }
+
+      .work:hover {
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="page__header">
+      <h1 class="page__title">Примеры лендингов</h1>
+      <p class="page__lead">Два демонстрационных сайта для вымышленных компаний. Чистые HTML, CSS и JavaScript — без фреймворков и сторонних библиотек.</p>
+    </header>
+
+    <ul class="works">
+      <li>
+        <a class="work" href="landing-cleaning/index.html">
+          <span class="work__preview work__preview--cleaning" aria-hidden="true">Пеночка</span>
+          <div class="work__body">
+            <h2 class="work__title">Клининговая служба</h2>
+            <p class="work__text">Калькулятор стоимости, FAQ-аккордеон, форма заявки с валидацией.</p>
+            <ul class="work__tags">
+              <li class="work__tag">Калькулятор</li>
+              <li class="work__tag">Аккордеон</li>
+              <li class="work__tag">Форма</li>
+            </ul>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="work" href="landing-barbershop/index.html">
+          <span class="work__preview work__preview--barber" aria-hidden="true">Цирюльня на Кузнечной</span>
+          <div class="work__body">
+            <h2 class="work__title">Мужская парикмахерская</h2>
+            <p class="work__text">Вывеска с вращающейся эмблемой, прайс таблицей, журнал записи на неделю.</p>
+            <ul class="work__tags">
+              <li class="work__tag">Журнал записи</li>
+              <li class="work__tag">Схемы на SVG</li>
+              <li class="work__tag">Запись</li>
+            </ul>
+          </div>
+        </a>
+      </li>
+    </ul>
+
+    <footer class="page__footer">
+      <p>Компании, цены и отзывы на страницах вымышлены.</p>
+    </footer>
+  </main>
+</body>
+</html>
